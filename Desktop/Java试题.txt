@@ -1,0 +1,70 @@
+Java试题
+第1题 float型float f=3.4是否正确?
+	不正确。在定义 float 类型时必须在数字后面跟上 F 或者 f。
+第2题 当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递?
+	引用传递。
+第3题 在Java中一个类被声明为final类型，表示了什么意思?
+	表示该类不能被继承。
+第4题 Error与Exception有什么区别?
+	Error，错误，是指程序无法处理的错误，表示应用程序运行时出现的重大错误。例如jvm运行时出现的OutOfMemoryError以及Socket编程时出现的端口占用等程序无法处理的错误。
+	Exception，异常 。异常可分为运行时异常跟编译异常。
+第5题 谈谈final, finally的区别。
+	1. final 修饰符。
+		（1）final 表示"最后的、最终的"含义，使用final声明变量，变量一旦赋值后，不能被重新赋值。被 final 修饰的实例变量必须显式指定初始值。
+		（2）使用 final 修饰符声明方法，类中的 final 方法可以被子类继承，但是不能被子类修改。声明 final 方法的主要目的是防止该方法的内容被修改。
+		（3）final 类不能被继承，没有类能够继承 final 类的任何特性。
+	2. finally 关键字用来创建在 try 代码块后面执行的代码块。无论是否发生异常，finally 代码块中的代码总会被执行。在 finally 代码块中，可以运行清理类型等收尾善后性质的语句。
+第6题 String s = new String(“xyz“);创建了几个String Object?
+	两个。第一个对象是"xyz"，第二个对象是new String("xyz")。s是一个指向 new String("xyz")的引用变量。
+第7题 short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错?
+	第一个错误。因为s1是short类型，1是int类型，s1会自动转换为int型再与1相加，得到的结果是int类型，要向左侧的short类型的s1看齐，需要通过强制类型转换。
+	第二个正确。”+=“是java语言规定的运算符，运算时会自动强转为左侧操作数类型。
+第8题 数组有没有length()这个方法? String有没有length()这个方法?
+	数组没有length()方法，String有。
+第9题 Overload和Override的区别
+	方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。
+	（1）方法重载是一个类中定义了多个方法名相同，而他们的参数的数量不同或数量相同而类型和次序不同，则称为方法的重载(Overloading)。
+	（2）方法重写是在子类存在方法与父类的方法的名字相同,而且参数的个数与类型一样，返回值也一样的方法，就称为重写(Overriding)。
+	（3）方法重载是一个类的多态性表现，而方法重写是子类与父类的一种多态性表现。
+第10题 abstract class和interface有什么区别?
+	（1）abstract类可以提供成员方法的实现细节，而interface中只能存在public abstract 方法。
+ 	（2）abstract类中的成员变量可以是各种类型的，而interface中的成员变量只能是public static final类型的。
+ 	（3）abstract类可以有静态代码块和静态方法，而interface中不能含有静态代码块以及静态方法。
+ 	（4）一个类只能继承一个abstract类，而一个类却可以实现多个interface。
+第11题 构造器Constructor是否可被override?
+	构造器Constructor不能被继承，因此不能重写Override，但可以被重载Overload。
+第12题 是否可以继承String类?
+	不能继承String类，因为String类是final类。
+第13题 请问输出结果？
+	FatherClass Create
+	FatherClass Create
+	ChildClass Create
+第14题 多线程有几种实现方法,都是什么?同步有几种实现方法,都是什么?
+	多线程实现方法包含：通过实现 Runnable 接口、通过继承Thread、通过 Callable 和 Future。
+	同步可通过synchronized，wait()和notify()实现。
+第15题 请说出你所知道的线程同步的方法
+	（1）同步方法 ，即有synchronized关键字修饰的方法。
+	（2）同步代码块 ，即有synchronized关键字修饰的语句块。
+第16题 当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?
+	不可以。synchronized 关键字声明的方法同一时间只能被一个线程访问。
+第17题 从下列选项中选择两个正确的答案放在 line 3 中
+	C.
+	E.
+第18题 STRING与STRINGBUFFER的区别
+	（1）String是字符串常量。String 是不可变的对象, 因此在每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象。
+	（2）StringBuffer是字符串变量（线程安全）。StringBuffer是对对象本身进行操作，而不是生成新的对象，再改变对象引用。
+第19题 Java类实现序例化的方法是?
+	该类必须实现Serializable接口或者Externalizable接口（Serializable接口的子类）。
+第20题 Collection框架中实现比较要实现什么接口?
+	要实现Comparator接口或者Comparable接口。
+第21题 介绍Java中的Collection 框架结构
+	Collection 接口有 3 种子类型，List、Set 和 Queue。Collection 是最基本的集合接口，Java不提供直接继承自Collection的类，只提供继承于的子接口(如List和set)。Collection 接口存储一组不唯一，无序的对象。
+	List接口是一个有序的 Collection，List 接口存储一组不唯一，有序（插入顺序）的对象。
+		List接口中常用类：
+			Vector，线程安全，但速度慢，已被ArrayList替代。底层数据结构是数组结构。
+			ArrayList：线程不安全，查询速度快。底层数据结构是数组结构。
+			LinkedList：线程不安全。增删速度快。底层数据结构是列表结构。
+	Set 具有与 Collection 完全一样的接口，只是行为上不同，Set 不保存重复的元素。Set 接口存储一组唯一，无序的对象。
+		Set接口中常用的类：
+			HashSet：线程不安全，存取速度快。
+			TreeSet：线程不安全，可以对Set集合中的元素进行排序。 
